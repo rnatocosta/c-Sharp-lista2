@@ -1,0 +1,35 @@
+// 1=>Crie um programa que receba 10 numeros e armazene em uma
+// lista e exiba os valores armazenados
+
+// Usando vetores:
+Console.WriteLine("Usando Vetores: 9");
+float[] num = new float[10];
+
+Console.WriteLine("Entre com 10 números: ");
+for (int i = 0; i < num.Length; i++)
+{
+    Console.WriteLine("Entre com o número da posição [" + i + "]: ");
+    num[i] = float.Parse(Console.ReadLine());
+}
+Console.WriteLine("Os valores armazenados foram: ");
+for (int i = 0; i < num.Length; i++)
+{
+    Console.WriteLine("Número da posição: [" + i + "]: " + num[i]);
+}
+// Usando Lista:
+
+Console.WriteLine("-----");
+Console.WriteLine("Usando listas:");
+
+List<float> aLista = new List<float>();
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine("Entre numero de posição [" + i + "] da lista: ");
+    aLista.Add(float.Parse(Console.ReadLine()));
+}
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine("O número da posição [" + i + "] é: " + aLista[i]);
+}
