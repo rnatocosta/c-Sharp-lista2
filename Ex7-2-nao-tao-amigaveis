@@ -1,0 +1,21 @@
+//  2=>Crie um programa que receba 10 frases
+//  e armazene em uma lista e exiba os valores armazenados
+
+
+// Usando Lista:
+
+Console.WriteLine("-----");
+Console.WriteLine("Usando listas:");
+
+List<String> aLista = new List<String>();
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine("Entre coma frase da posição [" + i + "] da lista: ");
+    aLista.Add((Console.ReadLine()));
+}
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine("A frase da posição [" + i + "] é: " + aLista[i]);
+}
