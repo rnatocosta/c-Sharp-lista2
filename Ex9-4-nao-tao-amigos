@@ -1,0 +1,36 @@
+//  4=>Cria um programa que receba
+//  qualquer valor mas so adicione na lista valores pares e exiba seus valores
+// Usando Lista:
+
+using System.Runtime.InteropServices;
+
+Console.WriteLine("-----");
+Console.WriteLine("Usando listas:");
+
+List<float> aLista = new List<float>();
+
+Console.WriteLine("Entre com 5 valores: ");
+
+for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine("Entre com o  " + i +"º Valor: ");
+    float valor = float.Parse(Console.ReadLine());
+    if (valor % 2 == 0)
+    {
+        // cai no par
+        Console.WriteLine("O número: " + valor + " foi adicionado a lista, pois é PAR!, continue preenchendo ...");
+        aLista.Add(valor);
+    }
+    else {
+        Console.WriteLine("Esse numero é IMPAR, não será adicionado na lista, continue preenchendo ...");
+    }
+    
+}
+Console.WriteLine("- - - - - -  - - - - - -");
+
+Console.WriteLine("Sequência de números PAR(es) adicionado(s): ");
+
+foreach(float item in aLista)
+{
+    Console.WriteLine(" Número: " + item.ToString());
+}
