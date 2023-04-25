@@ -1,0 +1,110 @@
+/*
+ * 2=>Adhemir trabalha em uma banca de frutas e todos os dias antes de montar a 
+ * banca ele desenha o layoult para organizar
+  o posicionamento de suas frutas. Em cada dia da semana ademir monta um 
+layoult diferente porem na hora de contabilizar adhemir muitas
+  vezes se perde devido ao cansaco do dia de trabalho. Crie um programa
+que estabeleca um layoult de bancada pre definido para aldemir e ajude ele 
+a contabilizar suas
+  vendas.
+  
+ */
+using System.Collections;
+using System.Runtime.InteropServices;
+
+Console.WriteLine("-----");
+Console.WriteLine("Usando listas:");
+Console.WriteLine("Como é uma questão de layout a organizaçao das frutas");
+Console.WriteLine("");
+
+int opcao = 0;
+string menu = "nada";
+
+List<float> precos = new List<float>();
+List<String> produtos = new List<String>();
+List<Boolean> vendeu = new List<Boolean>();
+
+while (menu != "fim") {
+    Console.WriteLine("O que você deseja fazer ? ");
+    Console.WriteLine("Cadastrar frutas e respectivos valores de venda (1)");
+    Console.WriteLine("Exibir o total e o nome das frutas vendidas de vendas(2)");
+    Console.WriteLine("Vender frutas(3)");
+    Console.WriteLine("Fechar o caixa e exibir relatorios(4)");
+
+
+
+switch (opcao)
+{
+    case 1:
+        Console.WriteLine("Enquanto nao declarar sim, o programa fica perguntando: ");
+        string terminou = "nao";
+
+        while (terminou != "sim")
+        {
+
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Entre com o nome da Fruta: ");
+            produtos.Add(Console.ReadLine());
+
+            Console.WriteLine("Entre com o valor R$:");
+            precos.Add(float.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Terminou de adicionar? sim(s) ou nao(n)");
+            terminou = Console.ReadLine();
+
+            // Vai marcando que não vendeu
+            vendeu.Add(false);
+            
+        }
+        break;
+
+    case 2:
+
+            float totVendas = 0;
+            // relação de todas as vendas
+
+            //????????????????????????????????????????
+            foreach (Boolean item in vendeu)
+            {
+                if (item == true)
+                {
+                    totVendas += precos.;
+                }
+            }
+             
+
+            Console.WriteLine("******************************");
+            Console.WriteLine("Calculando .....");
+            Console.WriteLine("O Sr(a) vendeu um total de R$" + totVendas);
+            Console.WriteLine("******************************");
+            Console.WriteLine("As frutas vendidas foram: ");
+
+            foreach (Boolean item in vendeu)
+            {
+                if (item == true)
+                {
+                    //Tentativa de imprimir os produtos/frutas que foram vendidas
+                    Console.WriteLine(produtos);
+                }
+            }
+            Console.WriteLine("---------------------");
+
+            break;
+       
+        case 3:
+
+            Console.WriteLine("******************************");
+            Console.WriteLine("Qual fruta deseja vender?");
+            string nomeFruta = Console.ReadLine();
+
+            //pega o indice da fruta e marca como vendida='TRUE'
+            int indice = produtos.IndexOf(nomeFruta);
+            vendeu[indice] = true;
+
+            Console.WriteLine("A fruta foi marcada como: vendida!");
+            Console.WriteLine("-------------");
+            break;
+        default:
+        break;
+}
+}//while
