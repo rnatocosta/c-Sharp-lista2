@@ -1,0 +1,24 @@
+//   5=>Crie um programa que receba 10 valores
+//   em uma lista e calcule sua media e exiba o valor da media.
+
+using System.Runtime.InteropServices;
+
+Console.WriteLine("-----");
+Console.WriteLine("Usando listas:");
+
+List<float> aLista = new List<float>();
+
+Console.WriteLine("Entre com 10 Notas: ");
+
+for (int i = 1; i <= 10; i++)
+{
+    Console.WriteLine("Entre com a  " + i +"ª Nota: ");
+    aLista.Add(float.Parse(Console.ReadLine()));    
+}
+Console.WriteLine("- - - - - -  - - - - - -");
+// sum = somatorio de toda lista
+//count conta a qtd de elementos na lista
+
+float media = aLista.Sum() / aLista.Count();
+
+Console.WriteLine("Sua média é: "+media);
