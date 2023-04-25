@@ -1,0 +1,45 @@
+/*
+ *   1=>Adriano adora ir ao mercado aos finais de semana, geralmente ele anota em um papel
+  a lista dos itens que precisam ser comprados e o quanto ele pode gastar com cada item. 
+     Crie um programa  que gerencie suas compras e o ajude a controlar seus gastos.
+ */
+using System.Runtime.InteropServices;
+
+Console.WriteLine("-----");
+Console.WriteLine("Usando listas:");
+
+List<float> precos = new List<float>();
+List<String> produtos = new List<String>(); 
+
+
+Console.WriteLine("Enquanto nao declarar fim, o programa fica perguntando: ");
+string terminou = "nao";
+
+while(terminou != "sim") {
+        
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("Entre com o nome do Produto: ");
+        produtos.Add(Console.ReadLine());
+        
+        Console.WriteLine("Entre com o valor R$:");
+        precos.Add(float.Parse(Console.ReadLine()));
+
+        Console.WriteLine("Terminou de adicionar? sim(s) ou nao(n)");
+        terminou = Console.ReadLine();
+
+
+}
+float gastoTotal;
+// função SUM soma todos os preços dos produtos
+gastoTotal = precos.Sum();
+
+Console.WriteLine("******************************");
+Console.WriteLine("Calculando .....");
+Console.WriteLine("O Sr(a) gastou um total de R$"+gastoTotal);
+Console.WriteLine("******************************");
+Console.WriteLine("Com os produtos: ");
+
+foreach (String item in produtos) {
+    Console.WriteLine(item.ToString()); 
+}
+
